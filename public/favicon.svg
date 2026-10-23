@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="32" fill="#1f2124"/>
+  <g transform="translate(14 12.5) scale(0.1125)">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#DDB86E"/>
+      <stop offset="0.55" stop-color="#C39A52"/>
+      <stop offset="1" stop-color="#A47A38"/>
+    </linearGradient>
+    <mask id="gap" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="352">
+      <rect width="320" height="352" fill="#fff"/>
+      <path d="M76 12 L124 12 L170 140 L208 226 L196 232 L142 150 Z" fill="#000" stroke="#000" stroke-width="12" stroke-linejoin="round"/>
+    </mask>
+    <mask id="pivot" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="352">
+      <rect width="320" height="352" fill="#fff"/>
+      <circle cx="156" cy="146" r="7" fill="#000"/>
+    </mask>
+  </defs>
+  <g fill="url(#g)">
+    <g mask="url(#gap)">
+      <path d="M200 6 L314 6 L314 9 Q298 12 290 15 L200 15 Z"/>
+      <path d="M274 13 L291 13 L90 240 L66 227 Z"/>
+      <ellipse cx="58" cy="284" rx="44" ry="57" transform="rotate(32 58 284)" fill="none" stroke="url(#g)" stroke-width="13"/>
+    </g>
+    <g mask="url(#pivot)">
+      <path d="M8 6 L128 6 L128 15 L124 15 L76 15 Q44 12 8 10 Z"/>
+      <path d="M76 12 L124 12 L170 140 L208 226 L196 232 L142 150 Z"/>
+      <ellipse cx="262" cy="284" rx="44" ry="57" transform="rotate(-32 262 284)" fill="none" stroke="url(#g)" stroke-width="13"/>
+    </g>
+  </g>
+</g>
+</svg>
