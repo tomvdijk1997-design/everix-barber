@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
+import { motion, useScroll, useTransform } from 'motion/react'
 import { useRef } from 'react'
 import { useLang } from '../i18n'
 import { ArrowRightIcon, WhatsAppIcon } from './Icons'
@@ -6,28 +6,9 @@ import { LogoMark } from './Logo'
 import { ease, fadeUp, stagger } from './Reveal'
 
 function Medallion() {
-  const { t } = useLang()
-  const reduce = useReducedMotion()
   return (
     <div className="medallion">
       <div className="medallion__glow" aria-hidden />
-      <motion.svg
-        className="medallion__ring"
-        viewBox="0 0 400 400"
-        aria-hidden
-        animate={reduce ? undefined : { rotate: 360 }}
-        transition={{ duration: 60, ease: 'linear', repeat: Infinity }}
-      >
-        <defs>
-          <path id="ring-path" d="M200 200 m-170 0 a170 170 0 1 1 340 0 a170 170 0 1 1 -340 0" />
-        </defs>
-        <circle cx="200" cy="200" r="196" fill="none" stroke="currentColor" strokeOpacity="0.25" />
-        <text className="medallion__text">
-          <textPath href="#ring-path" textLength={1060} lengthAdjust="spacing">
-            {t.hero.ring.repeat(2)}
-          </textPath>
-        </text>
-      </motion.svg>
       <motion.div
         className="medallion__disc"
         initial={{ scale: 0.8, opacity: 0 }}

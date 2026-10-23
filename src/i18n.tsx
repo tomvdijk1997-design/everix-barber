@@ -26,7 +26,6 @@ const nl = {
       { value: '€20', label: 'per knipbeurt' },
       { value: '€0', label: 'extra voor aan huis' },
     ],
-    ring: 'EVERIX · BARBER · VINKEVEEN · DE RONDE VENEN · ',
   },
   locations: {
     eyebrow: 'Twee manieren',
@@ -179,7 +178,6 @@ const en: Dict = {
       { value: '€20', label: 'per haircut' },
       { value: '€0', label: 'extra for home visits' },
     ],
-    ring: 'EVERIX · BARBER · VINKEVEEN · DE RONDE VENEN · ',
   },
   locations: {
     eyebrow: 'Two ways',

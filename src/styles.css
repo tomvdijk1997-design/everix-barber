@@ -553,23 +553,9 @@ p {
   background: radial-gradient(circle, rgba(201, 162, 90, 0.35), transparent 70%);
   filter: blur(30px);
 }
-.medallion__ring {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--gold-2);
-}
-.medallion__text {
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  fill: var(--text-muted);
-}
 .medallion__disc {
   position: relative;
-  width: 72%;
+  width: 80%;
   aspect-ratio: 1;
   border-radius: 50%;
   /* graphite disc with a thin gold rim (gradient border via padding-box/border-box) */
