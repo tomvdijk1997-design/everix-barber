@@ -572,16 +572,23 @@ p {
   width: 72%;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #f4f1ec 60%, #e7e2d9 100%);
+  /* graphite disc with a thin gold rim (gradient border via padding-box/border-box) */
+  border: 1.5px solid transparent;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(201, 162, 90, 0.16) 0%, transparent 55%) padding-box,
+    radial-gradient(circle at 35% 25%, #3a3d42 0%, #2a2c30 55%, #1d1f22 100%) padding-box,
+    linear-gradient(160deg, rgba(230, 200, 138, 0.9), rgba(164, 122, 56, 0.25) 50%, rgba(230, 200, 138, 0.6)) border-box;
   box-shadow:
-    0 40px 80px -30px rgba(0, 0, 0, 0.8),
-    0 0 0 1px rgba(255, 255, 255, 0.3),
-    0 0 0 10px rgba(201, 162, 90, 0.08);
+    0 40px 80px -30px rgba(0, 0, 0, 0.85),
+    inset 0 2px 18px rgba(255, 255, 255, 0.05),
+    inset 0 -20px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 12px rgba(201, 162, 90, 0.05);
   display: grid;
   place-items: center;
 }
 .medallion__mark {
-  width: 50%;
+  width: 54%;
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
   margin: 0 auto;
   transform: translateY(2%);
 }
