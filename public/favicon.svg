@@ -3,9 +3,9 @@
   <g transform="translate(14 12.5) scale(0.1125)">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="0.35" y2="1">
-      <stop offset="0" stop-color="#DDB86E"/>
-      <stop offset="0.55" stop-color="#C39A52"/>
-      <stop offset="1" stop-color="#A47A38"/>
+      <stop offset="0" stop-color="#E9D8B4"/>
+      <stop offset="0.55" stop-color="#CBB088"/>
+      <stop offset="1" stop-color="#A68C64"/>
     </linearGradient>
     <mask id="gap" maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="352">
       <rect width="320" height="352" fill="#fff"/>

@@ -11,9 +11,9 @@ export function LogoMark({ className, title }: { className?: string; title?: str
       {title && <title>{title}</title>}
       <defs>
         <linearGradient id={grad} x1="0" y1="0" x2="0.35" y2="1">
-          <stop offset="0" stopColor="#E3C27D" />
-          <stop offset="0.55" stopColor="#C79E55" />
-          <stop offset="1" stopColor="#A47A38" />
+          <stop offset="0" stopColor="#E9D8B4" />
+          <stop offset="0.55" stopColor="#CBB088" />
+          <stop offset="1" stopColor="#A68C64" />
         </linearGradient>
         <mask id={`${id}-gap`} maskUnits="userSpaceOnUse" x="0" y="0" width="320" height="352">
           <rect width="320" height="352" fill="#fff" />
@@ -42,11 +42,11 @@ export function LogoMark({ className, title }: { className?: string; title?: str
 
 export function Wordmark() {
   return (
-    <span className="wordmark">
-      <LogoMark className="wordmark__mark" />
-      <span className="wordmark__text">
-        Everix<small>Barber</small>
+    <span className="wordmark" role="img" aria-label="Everix">
+      <span className="wordmark__text" aria-hidden>
+        Everi
       </span>
+      <LogoMark className="wordmark__x" />
     </span>
   )
 }
