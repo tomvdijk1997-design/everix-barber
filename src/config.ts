@@ -1,11 +1,11 @@
-// Business facts in one place. Replace the PLACEHOLDER values before going live.
+// Business facts in one place.
 
 export const business = {
   name: 'Everix',
   barber: 'Kevin Everix',
-  // PLACEHOLDER: international format without "+" or leading zero, e.g. 31612345678
-  whatsapp: '31600000000',
-  // PLACEHOLDER: Instagram handle without "@"
+  // international format without "+" or leading zero
+  whatsapp: '31611708188',
+  // Instagram handle without "@"
   instagram: 'everix.barber',
   address: {
     street: 'Heulweg 1',

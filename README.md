@@ -18,8 +18,6 @@ npm run build    # static site in dist/
 
 | What | Where |
 | --- | --- |
-| WhatsApp number (`316…`, no `+`/leading 0) | `src/config.ts` → `whatsapp` |
-| Instagram handle | `src/config.ts` → `instagram` |
 | Real reviews, then set `isPlaceholder = false` | `src/i18n.tsx` → `reviews.items`, `src/components/Reviews.tsx` |
 | Gallery photos (WebP, ~1200px) in `public/gallery/` | `src/components/Gallery.tsx` → `photos` |
 | Portrait of Kevin | `src/components/About.tsx` |
