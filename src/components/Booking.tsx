@@ -1,24 +1,13 @@
 import { AnimatePresence, motion } from 'motion/react'
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { business, services, whatsappUrl, type ServiceId } from '../config'
 import { useLang, type Dict } from '../i18n'
+import { DatePicker, firstBookableDay } from './DatePicker'
 import { HomeIcon, MapPinIcon, WhatsAppIcon } from './Icons'
 import { ease, fadeUp, SectionHead, stagger } from './Reveal'
 
 type Place = 'shop' | 'home'
 
-function upcomingDates(count: number) {
-  const out: Date[] = []
-  const d = new Date()
-  d.setHours(0, 0, 0, 0)
-  while (out.length < count) {
-    if ((business.bookingDays as readonly number[]).includes(d.getDay())) out.push(new Date(d))
-    d.setDate(d.getDate() + 1)
-  }
-  return out
-}
-
-const isoDay = (d: Date) => `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
 const longDate = (t: Dict, d: Date) => `${t.days[d.getDay()]} ${d.getDate()} ${t.months[d.getMonth()]}`
 
 export function Booking({ service, setService }: { service: ServiceId; setService: (s: ServiceId) => void }) {
@@ -26,11 +15,9 @@ export function Booking({ service, setService }: { service: ServiceId; setServic
   const b = t.booking
   const [place, setPlace] = useState<Place>('shop')
   const [town, setTown] = useState<string>(business.serviceArea[0])
-  const dates = useMemo(() => upcomingDates(6), [])
-  const [day, setDay] = useState(isoDay(dates[0]))
+  const [day, setDay] = useState(firstBookableDay)
   const [name, setName] = useState('')
 
-  const picked = dates.find((d) => isoDay(d) === day) ?? dates[0]
   const svc = services.find((s) => s.id === service)!
 
   const lines = [
@@ -38,7 +25,7 @@ export function Booking({ service, setService }: { service: ServiceId; setServic
     '',
     `${b.msg.service}: ${t.services.items[service].name} (€${svc.price})`,
     `${b.msg.location}: ${place === 'shop' ? b.msg.shop : `${b.msg.home} ${town}`}`,
-    `${b.msg.day}: ${longDate(t, picked)}`,
+    `${b.msg.day}: ${longDate(t, day)}`,
     ...(name.trim() ? [`${b.msg.name}: ${name.trim()}`] : []),
     '',
     b.msg.outro,
@@ -119,18 +106,7 @@ export function Booking({ service, setService }: { service: ServiceId; setServic
               <legend>
                 <span className="step">3</span> {b.day}
               </legend>
-              <div className="options options--days">
-                {dates.map((d) => (
-                  <label key={isoDay(d)} className="option option--day">
-                    <input type="radio" name="day" checked={day === isoDay(d)} onChange={() => setDay(isoDay(d))} />
-                    <span className="option__body">
-                      <span className="option__sub">{t.daysShort[d.getDay()]}</span>
-                      <span className="option__day">{d.getDate()}</span>
-                      <span className="option__sub">{t.months[d.getMonth()]}</span>
-                    </span>
-                  </label>
-                ))}
-              </div>
+              <DatePicker value={day} onChange={setDay} />
             </fieldset>
 
             <label className="field">
@@ -159,7 +135,7 @@ export function Booking({ service, setService }: { service: ServiceId; setServic
                   <small>{b.summary}</small>
                 </span>
               </div>
-              <motion.div key={`${service}-${place}-${town}-${day}`} className="chat__bubble" initial={{ opacity: 0.6, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
+              <motion.div key={`${service}-${place}-${town}-${day.getTime()}`} className="chat__bubble" initial={{ opacity: 0.6, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.25 }}>
                 {message}
               </motion.div>
             </div>

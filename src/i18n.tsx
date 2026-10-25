@@ -111,6 +111,9 @@ const nl = {
     namePlaceholder: 'Bijv. Daan',
     send: 'Open WhatsApp',
     note: 'Er wordt niets verstuurd tot jij in WhatsApp op verzenden drukt.',
+    prevMonth: 'Vorige maand',
+    nextMonth: 'Volgende maand',
+    calendarHint: 'Kevin knipt op maandag, donderdag en zondag.',
     summary: 'Samenvatting',
     msg: {
       hi: 'Hoi Kevin! Ik wil graag een afspraak maken.',
@@ -263,6 +266,9 @@ const en: Dict = {
     namePlaceholder: 'E.g. Daan',
     send: 'Open WhatsApp',
     note: 'Nothing is sent until you press send in WhatsApp.',
+    prevMonth: 'Previous month',
+    nextMonth: 'Next month',
+    calendarHint: 'Kevin cuts on Mondays, Thursdays and Sundays.',
     summary: 'Summary',
     msg: {
       hi: 'Hi Kevin! I would like to book an appointment.',
